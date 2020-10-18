@@ -26,7 +26,7 @@ plt.title("Count of Drug Administered")
 plt.xticks(rotation='vertical')
 plt.show()
 
-sort_by_drugs = combined_study.sort_values(["Drug Regimen"], ascending=True)
+sort_by_drugs = combined_study.sort_values(["Drug Regimen", "Mouse ID", "Timepoint"], ascending=True)
 capomulin = sort_by_drugs[sort_by_drugs["Drug Regimen"].isin(["Capomulin"])]
 ramicane = sort_by_drugs[sort_by_drugs["Drug Regimen"].isin(["Ramicane"])]
 infubinol = sort_by_drugs[sort_by_drugs["Drug Regimen"].isin(["Infubinol"])]
@@ -67,3 +67,7 @@ showBoxPlot(capomulin, "Capomulin")
 showBoxPlot(ramicane, "Ramicane")
 showBoxPlot(infubinol, "Infubinol")
 showBoxPlot(ceftamin, "Ceftamin")
+
+#capomulin_weight = capomulin.loc[:, ["Mouse ID", "Weight (g)", "Tumor Volume (mm3)"]]
+
+#This is getting really hard. Will resume soon
